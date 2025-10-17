@@ -1,0 +1,19 @@
+// Центрирование календаря по экрану
+@mixin center-screen() {
+  // todo: flex + align
+}
+
+// Генерация чисел 1..31
+@mixin day-numbers() {
+  // todo: @for
+}
+
+// Генерация start-day модификаторов
+@mixin start-day-mods() {
+  // todo: @each
+}
+
+// Генерация month-length модификаторов
+@mixin month-length-mods() {
+  // todo: @for + nth-child
+}
