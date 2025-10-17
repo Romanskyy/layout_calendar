@@ -1,3 +1,7 @@
 @use 'variables';
 @use 'mixins';
 @use 'blocks/calendar';
+
+body {
+  @include mixins.center-screen;
+}

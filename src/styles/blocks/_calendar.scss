@@ -1,4 +1,17 @@
+@use '../mixins' as mixins;
+@use '../variables' as *;
+
 // Calendar block - structure placeholder
 .calendar {
-  // To be implemented
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap;
+  width: ($cell-size * 7) + ($gap * 6) + ($pad-x-total * 2);
+
+  &__day {
+    width: $cell-size;
+    height: $cell-size;
+    border: $border solid black;
+    background-color: $color-day;
+  }
 }

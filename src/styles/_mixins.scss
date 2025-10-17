@@ -1,6 +1,9 @@
 // Центрирование календаря по экрану
 @mixin center-screen() {
-  // todo: flex + align
+  display: flex;
+  justify-content: center; // горизонтальное центрирование
+  align-items: center; // вертикальное центрирование
+  height: 100%; // высота экрана
 }
 
 // Генерация чисел 1..31
