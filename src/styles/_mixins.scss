@@ -1,22 +1,40 @@
-// Центрирование календаря по экрану
+@use 'variables' as *;
+
 @mixin center-screen() {
   display: flex;
-  justify-content: center; // горизонтальное центрирование
-  align-items: center; // вертикальное центрирование
-  height: 100%; // высота экрана
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-// Генерация чисел 1..31
+// the below modifier generator applied inside the calendar block file
 @mixin day-numbers() {
-  // todo: @for
+  @for $i from 1 through 31 {
+    .calendar__day:nth-child(#{$i})::before {
+      content: '#{$i}';
+    }
+  }
 }
 
-// Генерация start-day модификаторов
+// the below modifier generator applied inside the calendar block file
 @mixin start-day-mods() {
-  // todo: @each
+  @each $name, $index in $start-days {
+    .calendar--start-day-#{$name} {
+      & > .calendar__day:first-child {
+        // $cell-size already includes border via box-sizing: border-box
+        margin-left: $index * ($cell-size + $gap);
+      }
+    }
+  }
 }
 
-// Генерация month-length модификаторов
+// the below modifier generator applied inside the calendar block file
 @mixin month-length-mods() {
-  // todo: @for + nth-child
+  @for $i from 28 through 31 {
+    .calendar--month-length-#{$i} {
+      .calendar__day:nth-child(n + #{$i + 1}) {
+        display: none;
+      }
+    }
+  }
 }
