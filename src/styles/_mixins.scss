@@ -7,7 +7,6 @@
   height: 100%;
 }
 
-// the below modifier generator applied inside the calendar block file
 @mixin day-numbers() {
   @for $i from 1 through 31 {
     .calendar__day:nth-child(#{$i})::before {
@@ -16,19 +15,16 @@
   }
 }
 
-// the below modifier generator applied inside the calendar block file
 @mixin start-day-mods() {
   @each $name, $index in $start-days {
     .calendar--start-day-#{$name} {
       & > .calendar__day:first-child {
-        // $cell-size already includes border via box-sizing: border-box
         margin-left: $index * ($cell-size + $gap);
       }
     }
   }
 }
 
-// the below modifier generator applied inside the calendar block file
 @mixin month-length-mods() {
   @for $i from 28 through 31 {
     .calendar--month-length-#{$i} {

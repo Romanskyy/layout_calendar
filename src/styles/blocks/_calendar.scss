@@ -8,13 +8,8 @@
   gap: $gap;
   width: funcs.calendar-width($cols, $cell-size, $gap, $pad-x-total);
   padding-inline: $pad-x-total / 2;
-  overflow: hidden; // corrections after PR
-  // @include mixins.start-day-mods;
-  // @include mixins.day-numbers;
-  // @include mixins.month-length-mods;
 
   &__day {
-    position: relative; // corrections after PR
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,18 +18,14 @@
     border: $border solid black;
     background-color: $color-day;
     cursor: pointer;
-    transition: transform $transition;
-    
-    // background-color $transition;
+    transition:
+      transform $transition,
+      background-color $transition;
 
     &::before {
       color: black;
       font-family: $font-day;
       font-size: $font-size-day;
-      position: absolute; // corrections after PR
-      inset: 0; // corrections after PR
-      display: grid; // corrections after PR
-      place-items: center; // corrections after PR
     }
 
     &:hover {
